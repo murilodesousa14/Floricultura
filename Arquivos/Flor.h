@@ -6,7 +6,7 @@ private:
   string cor, formato;
 
 public:
-  Flor(string n, float p, int i, int q, string co, string f) : Produto(n, p, i, q), cor(co), formato(f) {}
+  Flor(int d, int m, int a, string n, float p, int i, int q, string co, string f) : Produto(d, m, a, n, p, i, q), cor(co), formato(f) {}
 
   void exibir() {
     cout << "Tipo de Produto: Flor";
