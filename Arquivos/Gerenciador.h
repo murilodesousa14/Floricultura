@@ -150,10 +150,10 @@ public:
       totalProdutos += p->getQuantidade();
       valorTotal += (p->getPreco() * p->getQuantidade());
     }
-    cout << "Relatório de Estoque:\n";
+    cout << "\nRelatório de Estoque:\n";
     cout << "Tipos de produtos cadastrados: " << produtos.size() << endl;
     cout << "Total de produtos: " << totalProdutos << endl;
-    cout << "Total em estoque: R$" << valorTotal << endl;
+    cout << "Total em estoque: R$" << valorTotal << endl << "\n";
   }
 
   void salvarArquivo() {
