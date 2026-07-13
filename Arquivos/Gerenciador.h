@@ -29,7 +29,7 @@ public:
 
     string nome;
     float preco;
-    int indice, quantidade;
+    int indice, quantidade, dia, mes, ano;
     cout << "Nome: ";
     getline(cin, nome);
     cout << "Preço: ";
@@ -38,6 +38,8 @@ public:
     cin >> indice;
     cout << "Quantidade: ";
     cin >> quantidade;
+    cout << "Data(dd mm aaaa): ";
+    cin >> dia >> mes >> ano;
     cin.ignore();
 
     if (tipo == 1) {
@@ -48,7 +50,7 @@ public:
       cout << "Peso(Kg): ";
       cin >> peso;
       cin.ignore();
-      produtos.push_back(new Vaso(nome, preco, indice, quantidade, material, peso));
+      produtos.push_back(new Vaso(dia, mes, ano, nome, preco, indice, quantidade, material, peso));
     } else if (tipo == 2) {
       float comprimento;
       string especie;
@@ -57,14 +59,14 @@ public:
       cin.ignore();
       cout << "Espécie: ";
       getline(cin, especie);
-      produtos.push_back(new Planta(nome, preco, indice, quantidade, comprimento, especie));
+      produtos.push_back(new Planta(dia, mes, ano, nome, preco, indice, quantidade, comprimento, especie));
     } else if (tipo == 3) {
       string cor, formato;
       cout << "Cor: ";
       getline(cin, cor);
       cout << "Formato: ";
       getline(cin, formato);
-      produtos.push_back(new Flor(nome, preco, indice, quantidade, cor, formato));
+      produtos.push_back(new Flor(dia, mes, ano, nome, preco, indice, quantidade, cor, formato));
     }
 
     cout << "Produto cadastrado com sucesso!\n";
@@ -72,7 +74,7 @@ public:
 
   void listarProdutos() {
     if (produtos.empty()) {
-      cout << "Estoque de produtos vazio!\n";
+      cout << "\nEstoque de produtos vazio!\n";
     }
     for (auto p : produtos) {
       cout << "\n";
@@ -99,12 +101,13 @@ public:
     cout << "\nMais de um produto cadastrado com mesmo nome:\n" << endl;
     for (int index : encontrado) {
       cout << "Código: " << produtos[index]->getIndice() << endl
-           << "Produto: " << produtos[index]->getNome() << endl
-           << "Índice: " << index << endl << endl;
+           << "Nome: " << produtos[index]->getNome() << endl
+           << "Índice: " << index << endl;
+           produtos[index]->Data::exibir();
     }
 
     int escolha;
-    cout << "Por favor, digite o índice do produto desejado: ";
+    cout << "\nPor favor, digite o índice do produto desejado: ";
     cin >> escolha;
     cin.ignore();
     cout << endl;
@@ -130,7 +133,7 @@ public:
            << "Cadastre um novo produto:\n";
       inserirProduto();
     } else {
-      cout << "Produto não encontrado!\n";
+      cout << "\nProduto não encontrado!\n";
     }
   }
 
@@ -139,9 +142,9 @@ public:
     if (index != -1) {
       delete produtos[index];
       produtos.erase(produtos.begin() + index);
-      cout << "Produto removido com sucesso!\n";
+      cout << "\nProduto removido com sucesso!\n";
     } else {
-      cout << "Produto não encontrado!\n";
+      cout << "\nProduto não encontrado!\n";
     }
   }
 
@@ -178,7 +181,10 @@ public:
     string linha;
     while (getline(in, linha)) {
       stringstream ss(linha);
-      string tipo, nome, precoS, indiceS, quantidadeS, info1, info2;
+      string diaS, mesS, anoS, tipo, nome, precoS, indiceS, quantidadeS, info1, info2;
+      getline(ss, diaS, '-');
+      getline(ss, mesS, '-');
+      getline(ss, anoS, '-');
       getline(ss, tipo, '-');
       getline(ss, nome, '-');
       getline(ss, precoS, '-');
@@ -191,19 +197,22 @@ public:
         continue;
       }
 
+      int dia = stoi(diaS);
+      int mes = stoi(mesS);
+      int ano = stoi(anoS);
       float preco = stof(precoS);
       int indice = stoi(indiceS);
       int quantidade = stoi(quantidadeS);
 
       if (tipo == "V") {
         produtos.push_back(
-            new Vaso(nome, preco, indice, quantidade, info1, stof(info2)));
+            new Vaso(dia, mes, ano, nome, preco, indice, quantidade, info1, stof(info2)));
       } else if (tipo == "P") {
         produtos.push_back(
-            new Planta(nome, preco, indice, quantidade, stof(info1), info2));
+            new Planta(dia, mes, ano, nome, preco, indice, quantidade, stof(info1), info2));
       } else if (tipo == "F") {
         produtos.push_back(
-            new Flor(nome, preco, indice, quantidade, info1, info2));
+            new Flor(dia, mes, ano, nome, preco, indice, quantidade, info1, info2));
       }
     }
 
