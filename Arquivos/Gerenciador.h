@@ -75,8 +75,10 @@ public:
       cout << "Estoque de produtos vazio!\n";
     }
     for (auto p : produtos) {
+      cout << "\n";
       p->exibir();
     }
+    cout << "\n";
   }
 
   int pesquisarProduto(string nome) {
@@ -113,7 +115,7 @@ public:
     if (index != -1) {
       produtos[index]->exibir();
     } else {
-      cout << "Não encontrado!\n";
+      cout << "Produto não encontrado!\n";
     }
   }
 
