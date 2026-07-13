@@ -7,7 +7,7 @@ private:
   float peso;
 
 public:
-  Vaso(string n, float p, int i, int q, string m, float pe) : Produto(n, p, i, q), material(m), peso(pe) {}
+  Vaso(int d, int m, int a, string n, float p, int i, int q, string ma, float pe) : Produto(d, m, a, n, p, i, q), material(ma), peso(pe) {}
 
   void exibir() {
     cout << "Tipo de Produto: Vaso";
