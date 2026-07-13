@@ -10,6 +10,7 @@ public:
   Vaso(string n, float p, int i, int q, string m, float pe) : Produto(n, p, i, q), material(m), peso(pe) {}
 
   void exibir() {
+    cout << "Tipo de Produto: Vaso";
     Produto::exibir();
     cout << "Material: " << material << endl << "Peso(Kg): " << peso << endl;
   }
