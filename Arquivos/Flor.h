@@ -9,6 +9,7 @@ public:
   Flor(string n, float p, int i, int q, string co, string f) : Produto(n, p, i, q), cor(co), formato(f) {}
 
   void exibir() {
+    cout << "Tipo de Produto: Flor";
     Produto::exibir();
     cout << "Cor: " << cor << endl << "Formato: " << formato << endl;
   }
