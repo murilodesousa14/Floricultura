@@ -8,7 +8,7 @@ private:
   string especie;
 
 public:
-  Planta(string n, float p, int i, int q, float c, string e) : Produto(n, p, i, q), comprimento(c), especie(e) {}
+  Planta(int d, int m, int a, string n, float p, int i, int q, float c, string e) : Produto(d, m, a, n, p, i, q), comprimento(c), especie(e) {}
 
   void exibir() {
     cout << "Tipo de Produto: Planta";
