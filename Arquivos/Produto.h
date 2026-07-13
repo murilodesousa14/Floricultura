@@ -21,7 +21,7 @@ public:
     out << nome << "-" << preco << "-" << indice << "-" << quantidade << "-";
   }
   virtual void exibir() {
-    cout << "Nome: " << nome << endl
+    cout << "\nNome: " << nome << endl
          << "Preço: " << preco << endl
          << "Código: " << indice << endl
          << "Quantidade em Estoque: " << quantidade << endl;
