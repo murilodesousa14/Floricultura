@@ -153,7 +153,7 @@ public:
     cout << "\nRelatório de Estoque:\n";
     cout << "Tipos de produtos cadastrados: " << produtos.size() << endl;
     cout << "Total de produtos: " << totalProdutos << endl;
-    cout << "Total em estoque: R$" << valorTotal << endl << "\n";
+    cout << "Total em estoque: R$ " << valorTotal << endl << "\n";
   }
 
   void salvarArquivo() {
