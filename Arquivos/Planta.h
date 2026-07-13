@@ -11,6 +11,7 @@ public:
   Planta(string n, float p, int i, int q, float c, string e) : Produto(n, p, i, q), comprimento(c), especie(e) {}
 
   void exibir() {
+    cout << "Tipo de Produto: Planta";
     Produto::exibir();
     cout << "Comprimento(m): " << comprimento << endl
          << "Espécie: " << especie << endl;
