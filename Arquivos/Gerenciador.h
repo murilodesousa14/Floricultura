@@ -181,11 +181,11 @@ public:
     string linha;
     while (getline(in, linha)) {
       stringstream ss(linha);
-      string diaS, mesS, anoS, tipo, nome, precoS, indiceS, quantidadeS, info1, info2;
+      string tipo, diaS, mesS, anoS, nome, precoS, indiceS, quantidadeS, info1, info2;
+      getline(ss, tipo, '-');
       getline(ss, diaS, '-');
       getline(ss, mesS, '-');
       getline(ss, anoS, '-');
-      getline(ss, tipo, '-');
       getline(ss, nome, '-');
       getline(ss, precoS, '-');
       getline(ss, indiceS, '-');
