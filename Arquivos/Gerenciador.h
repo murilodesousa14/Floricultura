@@ -96,11 +96,11 @@ public:
       return encontrado[0];
     }
 
-    cout << "Mais de um produto cadastrado com mesmo nome:\n";
+    cout << "\nMais de um produto cadastrado com mesmo nome:\n";
     for (int index : encontrado) {
-      cout << "Código: " << produtos[index]->getIndice() << endl
+      cout << "\nCódigo: " << produtos[index]->getIndice() << endl
            << "Produto: " << produtos[index]->getNome() << endl
-           << "Índice: " << index << endl;
+           << "Índice: " << index << endl << endl;
     }
 
     int escolha;
