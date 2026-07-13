@@ -104,7 +104,7 @@ public:
     }
 
     int escolha;
-    cout << "\nPor favor, digite o índice do produto desejado: ";
+    cout << "Por favor, digite o índice do produto desejado: ";
     cin >> escolha;
     cin.ignore();
     cout << endl;
@@ -115,8 +115,9 @@ public:
     int index = pesquisarProduto(nome);
     if (index != -1) {
       produtos[index]->exibir();
+      cout << endl;
     } else {
-      cout << "Produto não encontrado!\n";
+      cout << "\nProduto não encontrado!\n";
     }
   }
 
