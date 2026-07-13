@@ -51,7 +51,7 @@ int main() {
       gerenciador.exibirRelatorio();
       break;
     case 7:
-      cout << "Até mais! =)\n";
+      cout << "\nAté mais! =)\n";
       break;
     default:
       cout << "Ops, opção inválida! Por favor, escolha uma das opcões listadas "
